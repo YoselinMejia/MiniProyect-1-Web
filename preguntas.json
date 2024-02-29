@@ -1,0 +1,90 @@
+
+{"questions":
+    [
+
+        {"question": "¿Cuál es el orden del ciclo del avatar?",
+        "options": ["Aire, Agua, Tierra, Fuego", "Agua, Tierra Aire, Fuego", "Fuego, Tierra, Aire, Agua", "Tierra, Agua, Fuego Aire"],
+        "answer": "Aire, Agua, Tierra, Fuego"},
+    
+        {"question": "¿Cuál fue el avatar antes que Aang?",
+        "options": ["Roku", "Kyoshi", "Kuruk", "YangChen"],
+        "answer": "Roku"},
+    
+        {"question": "¿Cuál es el sobre nombre que usaba Toph en el torneo subterráneo de tierra-control?",
+        "options": ["Roca Femenina", "Mujer de Piedra", "Pies ligeros", "La bandida ciega"],
+        "answer": "La bandida ciega"},
+    
+        {"question": "¿Cuál es la solución que descubre Aang como alternativa en lugar de asesinar al Señor del Fuego?",
+        "options": ["Se convierte en su aliado", "No encuentra solución y decide asesinarlo", "Quitarle su Fuego-control", "Lo encierra en una celda"],
+        "answer": "Quitarle su Fuego-control"},
+    
+        {"question": "¿Qué cadena de televisión estadounidense emitió originalmente Avatar: La leyenda de Aang?",
+        "options": ["Disney Channel", "Cartoon Network", "PBS Kids", "Nickelodeon"],
+        "answer": "Nickelodeon"},
+    
+        {"question": "¿Cuál es la identidad del 'Demonio Azul'?",
+        "options": ["Ozai", "Zukko", "Sokka", "Aang"],
+        "answer": "Zukko"},
+    
+        {"question": "¿Cuántos años permaneció congelado Aang?",
+        "options": ["100 años", "25 años", "50 años", "1000 años"],
+        "answer": "100 años"},
+    
+        {"question": "¿De qué templo es Aang?",
+        "options": ["Templo Aire del Norte", "Templo Aire del Sur", "Templo Aire del Este", "Templo Aire del Oeste"],
+        "answer": "Templo Aire del Sur"},
+    
+        {"question": "¿Cómo se llama la tienda de té abrió Iroh en el Anillo Superior de Ba Sing Se?",
+        "options": ["Dragón Del Jazmín", "Casa del se te ba sing se", "El palacio del Loto Blanco", "El palacio del té del rey"],
+        "answer": "Dragón Del Jazmín"},
+    
+        {"question": "¿Qué arma usa Sokka?",
+        "options": ["Una Daga", "Un cuchillo", "Un machete", "Un Boomerang"],
+        "answer": "Un Boomerang"},
+    
+        {"question": "¿Quién le enseño agua-control a Aang?",
+        "options": ["Vaatu", "Raava", "Katara", "El espíritu de la luna "],
+        "answer": "Katara"},
+    
+        {"question": "¿Qué clase de control descubre Toph?",
+        "options": ["Lava control", "Metal control", "Arena control", "Sangre control"],
+        "answer": "Metal control"},
+    
+        {"question": "¿Cómo se origina la cicatriz de Zukko?",
+        "options": ["Durante un Agni Kai con su padre", "Durante un Agni Kai con su hermana Azula", "En un accidente con Iroh", "En un accidente con su madre"],
+        "answer": "Durante un Agni Kai con su padre"},
+    
+        {"question": "¿Cuál de las siguientes respuestas no es un libro o temporada de Avatar: La leyenda de Aang?",
+        "options": ["Fuego", "Agua", "Tierra", "Aire"],
+        "answer": "Aire"},
+    
+        {"question": "¿Quién le enseña a Toph Tierra control?",
+        "options": ["Poppy Beifong (Su madre)", "Aang", "El león tortuga", "Los tejones topo"],
+        "answer": "Los tejones topo"},
+    
+        {"question": "¿A qué edad Aang descubre que es el avatar?",
+        "options": ["3 años", "12 años", "9 años", "6 años"],
+        "answer": "12 años"},
+    
+        {"question": "¿Qué evento celestial aumenta enormemente los poderes del fuego-control?",
+        "options": ["El solsticio de verano", "Un eclipse solar", "El cometa de Sozin", "Un eclipse lunar"],
+        "answer": "El cometa de Sozin"},
+    
+        {"question": "¿Qué clase de criatura es Appa?",
+        "options": ["Buey cabra", "Lémur Alado", "Búfalo volador", "Bisonte volador"],
+        "answer": "Bisonte volador"},
+    
+        {"question": "¿Qué sucede si el avatar muere mientras está en el estado avatar?",
+        "options": ["El avatar pierde su memoria", "El avatar pierde sus poderes", "El avatar pierde sus poderes", "El avatar no puede ser reencarnado"],
+        "answer": "El avatar no puede ser reencarnado"},
+    
+        {"question": "¿Qué alimento lleva el comerciante en su carro siempre que es destruido?",
+        "options": ["Sandias", "Zanahorias", "Coles", "Papas"],
+        "answer": "Coles"},
+    
+        {"question": "¿Quién le enseña a Toph Tierra control?",
+        "options": ["Aang", "Los tejones topo", "El león tortugas", "Poppy Beifong (Su madre)"],
+        "answer": "Los tejones topo"}
+   
+    ]
+}
