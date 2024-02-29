@@ -61,68 +61,87 @@
     <div id="score" class="mb-5">Score: <span id="score-value">0</span></div>
   </div>
 
-    <script>
+  <script>
+    async function fetchData(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Error al obtener los datos');
+        }
+        return response.json();
+    }
+
+    async function fetchQuestions() {
+        try {
+            const data = await fetchData("https://raw.githubusercontent.com/YoselinMejia/MiniProyect-1-Web/master/preguntas.json");
+            return data.questions;
+        } catch (error) {
+            console.error("Error al cargar las preguntas:", error);
+        }
+    }
+
+    async function initializeTrivia() {
+        const allQuestions = await fetchQuestions();
+        const totalQuestions = allQuestions.length;
+
+        // Obtener tres índices aleatorios únicos dentro del rango de preguntas
+        const randomIndexes = [];
+        while (randomIndexes.length < 3) {
+            const randomIndex = Math.floor(Math.random() * totalQuestions);
+            if (!randomIndexes.includes(randomIndex)) {
+                randomIndexes.push(randomIndex);
+            }
+        }
+
+        // Seleccionar tres preguntas aleatorias utilizando los índices aleatorios
+        const selectedQuestions = randomIndexes.map(index => allQuestions[index]);
+
+        const questionElement = document.getElementById("question");
+        const optionsElement = document.getElementById("options");
+        const scoreElement = document.getElementById("score-value");
+
         let currentQuestionIndex = 0;
         let score = 0;
-        
-        fetch("https://raw.githubusercontent.com/YoselinMejia/MiniProyect-1-Web/master/preguntas.json")
-        .then(response => response.json())
-        .then(data => {
-            const allQuestions = data.questions;
-            const totalQuestions = allQuestions.length;
 
-            const randomIndexes = [];
-            while (randomIndexes.length < 3) {
-                const randomIndex = Math.floor(Math.random() * totalQuestions);
-                if (!randomIndexes.includes(randomIndex)) {
-                    randomIndexes.push(randomIndex);
-                }
+        function displayQuestion(index) {
+            const question = selectedQuestions[index];
+            questionElement.textContent = question.question;
+
+            optionsElement.innerHTML = "";
+            question.options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("btn", "btn-secondary", "mr-2", "mb-2");
+                button.addEventListener("click", () => checkAnswer(option === question.answer));
+                optionsElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(isCorrect) {
+            if (isCorrect) {
+                score++;
+                scoreElement.textContent = score;
             }
 
-            const selectedQuestions = randomIndexes.map(index => allQuestions[index]);
+            currentQuestionIndex++;
+            if (currentQuestionIndex < selectedQuestions.length) {
+                displayQuestion(currentQuestionIndex);
+            } else {
+                alert("Game Over. Tu puntaje final es: " + score);
 
-            const questionElement = document.getElementById("question");
-            const optionsElement = document.getElementById("options");
-            const scoreElement = document.getElementById("score-value");
-
-            function displayQuestion(index) {
-                const question = selectedQuestions[index];
-                questionElement.textContent = question.question;
-
-                optionsElement.innerHTML = "";
-                question.options.forEach(option => {
-                    const button = document.createElement("button");
-                    button.textContent = option;
-                    button.classList.add("btn", "btn-secondary", "mr-2", "mb-2");
-                    button.addEventListener("click", () => checkAnswer(option === question.answer));
-                    optionsElement.appendChild(button);
-                });
+                currentQuestionIndex = 0;
+                score = 0;
+                scoreElement.textContent = score;
+                displayQuestion(currentQuestionIndex);
             }
+        }
 
-            function checkAnswer(isCorrect) {
-                if (isCorrect) {
-                    score++;
-                    scoreElement.textContent = score;
-                }
+        displayQuestion(currentQuestionIndex);
+    }
 
-                currentQuestionIndex++;
-                if (currentQuestionIndex < selectedQuestions.length) {
-                    displayQuestion(currentQuestionIndex);
-                } else {
-                    alert("Game Over. Tu puntaje final es: " + score);
+    document.getElementById("next-btn").addEventListener("click", initializeTrivia);
 
-                    currentQuestionIndex = 0;
-                    score = 0;
-                    scoreElement.textContent = score;
-                    displayQuestion(currentQuestionIndex);
-                }
-            }
-
-            displayQuestion(currentQuestionIndex);
-        })
-        .catch(error => {
-            console.error("Error al cargar las preguntas:", error);
-        });
-    </script>
+    // Iniciar la trivia cuando la página se carga
+    window.addEventListener("load", initializeTrivia);
+</script>
 </body>
 </html>
